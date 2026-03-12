@@ -1,1 +1,8 @@
 /* Override styles here */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+img + * {
+  margin-block-start: var(--flow-space, 3em);
+}
