@@ -12,15 +12,14 @@ type ImageOptions = Pick<
 type Props = Omit<HTMLAttributes<"img">, "src" | "alt" | "width" | "height"> &
   ImageOptions & {
     imagePath: string;
-    altText: string;
+    alt: string;
   };
 
-const { imagePath, altText, ...imgProps } = Astro.props as Props;
+const { imagePath, ...imgProps } = Astro.props as Props;
 
 // Use import.meta.glob to dynamically import images from the data/images folder
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/data/images/*.{jpeg,jpg,png,gif,webp}",
-  { eager: true },
 );
 
 // Check if the image path exists in our glob
@@ -31,6 +30,8 @@ if (!image) {
     `"${imagePath}" does not exist in glob: "/src/data/images/*.{jpeg,jpg,png,gif,webp}"`,
   );
 }
+
+const importedImage = await image();
 ---
 
-<Image src={image.default} alt={altText} {...imgProps} />
+<Image src={importedImage.default} {...imgProps} />

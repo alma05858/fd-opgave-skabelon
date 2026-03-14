@@ -24,7 +24,14 @@ console.log(employees);
 
 ### DynamicImage.astro (`@helpers/DynamicImage.astro`)
 
-Brug denne komponent til at vise billeder dynamisk fra lokale datafiler. Du skal blot sende stien fra datasættet direkte til komponenten.
+Brug denne komponent til at vise billeder dynamisk fra lokale datafiler. Komponenten slår billedet op i `src/data/images/` ud fra den sti, du sender ind via `imagePath`.
+
+`DynamicImage` forventer mindst:
+
+- `imagePath`: stien til billedet fra dine data
+- `alt`: alt-tekst til billedet
+
+Den forwarder desuden almindelige `<img>`-attributter som fx `class`, `style`, `loading` og `sizes`, samt udvalgte Astro `<Image>`-options som `width`, `height`, `format`, `quality`, `priority` og `layout`.
 
 Eksempel med data:
 
@@ -32,26 +39,29 @@ Eksempel med data:
 {employees.map((employee) => (
   <DynamicImage
     imagePath={employee.img}
-    altText={employee.name}
+    alt={employee.name}
     width={200}
     height={200}
+    class="employee-image"
   />
 ))}
 ```
 
 ### DynamicIcon.astro (`@helpers/DynamicIcon.astro`)
 
-`DynamicIcon` bruges til at vise SVG-ikoner dynamisk baseret på et navn fra dine data.
+`DynamicIcon` bruges til at vise SVG-ikoner dynamisk baseret på et navn fra dine data. `name` skal matche filnavnet på et ikon i `src/icons/`.
+
+Komponenten forwarder øvrige props direkte til SVG-komponenten, så du fx kan sende `class`, `width`, `height` og lignende med.
 
 Eksempel med data:
 
 ```astro
 {employee.social_links.map((link) => (
-  <DynamicIcon name={link.icon} />
+  <DynamicIcon name={link.icon} width={24} height={24} class="social-icon" />
 ))}
 ```
 
-Her vises et ikon for hvert socialt medie, hvor `icon`-feltet matcher filnavnet på SVG-ikonet i `src/icons/`.
+Hvis ikonet ikke findes, vises der ikke noget output, og komponenten logger en advarsel i konsollen.
 
 ---
 
