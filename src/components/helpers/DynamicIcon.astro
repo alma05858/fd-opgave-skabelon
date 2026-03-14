@@ -1,10 +1,10 @@
 ---
-const { name, class: className = "icon" } = Astro.props;
+const { name, ...iconProps } = Astro.props;
 
 let IconComponent;
 try {
   IconComponent = await import(`../../icons/${name}.svg`).then(
-    (module) => module.default
+    (module) => module.default,
   );
 } catch (error) {
   console.warn(`Icon "${name}" not found`);
@@ -12,4 +12,4 @@ try {
 }
 ---
 
-{IconComponent && <IconComponent class={className} />}
+{IconComponent && <IconComponent {...iconProps} />}
