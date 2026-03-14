@@ -7,7 +7,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
 <article>
   <header>
-    <DynamicImage imagePath={image} alt={caseName} />
+    <DynamicImage src={image} alt={caseName} />
     <div class="case-details">
       <dl>
         <div>
@@ -53,7 +53,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
         )}
         {section.image && (
           <DynamicImage
-            imagePath={section.image}
+            src={section.image}
             alt={section.title}
             width={600}
             height={400}

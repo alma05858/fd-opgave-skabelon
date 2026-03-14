@@ -24,11 +24,11 @@ console.log(employees);
 
 ### DynamicImage.astro (`@helpers/DynamicImage.astro`)
 
-Brug denne komponent til at vise billeder dynamisk fra lokale datafiler. Komponenten slår billedet op i `src/data/images/` ud fra den sti, du sender ind via `imagePath`.
+Brug denne komponent til at vise billeder dynamisk fra lokale datafiler. Komponenten slår billedet op i `src/data/images/` ud fra den sti, du sender ind via `src`.
 
 `DynamicImage` forventer mindst:
 
-- `imagePath`: stien til billedet fra dine data
+- `src`: stien til billedet fra dine data
 - `alt`: alt-tekst til billedet
 
 Den forwarder desuden almindelige `<img>`-attributter som fx `class`, `style`, `loading` og `sizes`, samt udvalgte Astro `<Image>`-options som `width`, `height`, `format`, `quality`, `priority` og `layout`.
@@ -38,13 +38,26 @@ Eksempel med data:
 ```astro
 {employees.map((employee) => (
   <DynamicImage
-    imagePath={employee.img}
+    src={employee.img}
     alt={employee.name}
     width={200}
     height={200}
     class="employee-image"
   />
 ))}
+```
+
+Eksempel på styling:
+
+```astro
+<DynamicImage src={employee.img} alt={employee.name} class="employee-image" />
+
+<style>
+  .employee-image {
+    max-width: 300px;
+    border-radius: 1rem;
+  }
+</style>
 ```
 
 ### DynamicIcon.astro (`@helpers/DynamicIcon.astro`)
