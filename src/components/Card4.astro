@@ -1,0 +1,78 @@
+---
+import "../styles/tokens.css";
+import Card4Item from "../components/Card4Item.astro";
+import Layers from "../icons/layers.svg";
+import Bars from "../icons/bars.svg";
+import Globe from "../icons/globe.svg";
+import Gear from "../icons/gear.svg";
+---
+
+<section>
+  <h5>Growing with our Clients</h5>
+  <h2>Our core values & principles</h2>
+  <div class="p-btn">
+    <p>
+      Capitalize on low hanging fruit to identify a ballpark value added
+      activity beta test. Override the digital divide with additional from
+      DevOps.
+    </p>
+    <button>Get in touch</button>
+  </div>
+</section>
+
+<section class="cards">
+  <Card4Item
+    title="Creative Ideas"
+    description="Explore innovative strategies tailored to your goals. Unlock unique solutions that inspire growth and creativity. Drive impactful change."
+    more="Read More"
+  >
+    <Layers slot="icon" />
+  </Card4Item>
+
+  <Card4Item
+    title="Best Features"
+    description="Deliver advanced tools designed for seamless integration. Optimize workflows with cutting-edge technology."
+    more="Read More"
+  >
+    <Bars slot="icon" />
+  </Card4Item>
+
+  <Card4Item
+    title="Experience"
+    description="Leverage years of proven expertise across diverse industries. Empower your business with our skilled professionals. Achieve sustainable success."
+    more="Read More"
+  >
+    <Globe slot="icon" />
+  </Card4Item>
+
+  <Card4Item
+    title="Easy Solutions"
+    description="Streamline your challenges with simple, effective solutions. Ensure hassle-free implementation for measurable results."
+    more="Read More"
+  >
+    <Gear slot="icon" />
+  </Card4Item>
+</section>
+
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .p-btn {
+    display: inline-flex;
+
+    p {
+      max-width: 65ch;
+    }
+
+    button {
+      color: var(--color-on-ui-primary);
+      background-color: var(--color-neutrals-900);
+      border-radius: var(--radius-btn);
+      padding: 0.4rem;
+    }
+  }
+</style>

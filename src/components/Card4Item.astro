@@ -1,0 +1,55 @@
+---
+import "../styles/tokens.css";
+const { title, description, more } = Astro.props;
+import ArrowRight from "../icons/arrow--right.svg";
+---
+
+<article class="card4item">
+  <div class="icon">
+    <slot name="icon" />
+  </div>
+  <h4>{title}</h4>
+  <p>{description}</p>
+  <div class="more">
+    <a href="/index">{more}</a>
+    <ArrowRight />
+  </div>
+</article>
+
+<style>
+  .card4item {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    align-content: start;
+    gap: 0.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid #eaeaea;
+    background: #fff;
+    padding: 1rem;
+  }
+
+  .icon {
+    width: fit-content;
+    display: inline-flex;
+    padding: 0.4rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-neutrals-900);
+  }
+
+  .icon :global(svg) {
+    color: var(--color-neutrals-50);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .more {
+    display: inline-flex;
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: #1c1c1c;
+    }
+  }
+</style>
