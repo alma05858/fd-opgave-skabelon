@@ -1,0 +1,30 @@
+---
+import LayoutAccordion from "@layouts/LayoutAccordion.astro";
+import AccordionContainer from "../components/AccordionContainer.astro";
+import faqData from "../data/faq2.json";
+import Card4 from "../components/Card4.astro";
+---
+
+<LayoutAccordion title="Welcome to Astro.">
+  <main>
+    <p>FAQ</p>
+    <h1>Customer Questions</h1>
+    <AccordionContainer data={faqData} exclusive={true} />
+  </main>
+</LayoutAccordion>
+<Card4 />
+
+<style>
+  main {
+    margin: 3rem max(1rem, 50% - 1000px / 2);
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+</style>
