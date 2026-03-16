@@ -10,11 +10,13 @@ img + * {
 body {
   display: grid;
   grid-template-columns:
-    [full-start] 1fr [content] minmax(0, 1200px)
+    [full-start] 1fr [content-start] minmax(0, 600px)
+    [content-end]
     1fr [full-end];
 }
 
-header {
+header,
+footer {
   display: grid;
   grid-column: full;
   grid-template-columns: subgrid;
