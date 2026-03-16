@@ -1,1 +1,28 @@
 /* Override styles here */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+img + * {
+  margin-block-start: var(--flow-space, 3em);
+}
+
+body {
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [content-start] minmax(0, 600px)
+    [content-end]
+    1fr [full-end];
+}
+
+header,
+footer {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+  background-color: aquamarine;
+
+  > * {
+    grid-column: content;
+  }
+}

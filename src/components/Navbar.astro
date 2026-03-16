@@ -1,0 +1,62 @@
+<header>
+  <div class="nav-div">
+    <nav class="nav-bar">
+      <a href="/index.html">AskExperts</a>
+
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/case.astro">Case Study</a></li>
+        <li><a href="/team.astro">Team</a></li>
+        <li><a href="/about.astro">About</a></li>
+      </ul>
+
+      <button popovertarget="pop">Login</button>
+    </nav>
+
+    <aside id="pop" popover="manual">
+      <div>
+        <h2>Login</h2>
+        <form>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<style>
+  @layer component {
+    nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    [popovertarget] {
+      anchor-name: --nav-btn;
+    }
+
+    [popover] {
+      position-anchor: --nav-btn;
+      position-anchor: --nav-btn;
+      position-area: bottom span-right;
+      position-try: flip-inline;
+      justify-self: anchor-center;
+    }
+  }
+</style>

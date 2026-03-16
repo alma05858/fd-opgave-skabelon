@@ -31,10 +31,31 @@
   --color-text-weak: var(--color-neutrals-400);
   --color-surface-highlight: var(--color-yellow-600);
   --color-on-ui-primary-muted: var(--color-neutrals-400);
+
+  /* ==== Spacing ==== */
+  --step--1: clamp(0.89rem, 0.86rem + 0.16vw, 1rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.12rem + 0.6vw, 1.5rem);
+  --step-2: clamp(1.56rem, 1.3rem + 1.2vw, 2rem);
+
+  --space-s: clamp(0.75rem, 0.7rem + 0.2vw, 0.9rem);
+  --space-m: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  --space-l: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+
+  /* ==== Typography ==== */
+  --font-heading: Cabin;
+  --font-text: Lato;
+
+  --text-p: 1rem;
+  --text-title: 3.75rem;
+  --text-h1: 3.125rem;
+  --text-h2: 2.8125rem;
+  --text-h3: 2.5rem;
+  --text-h4: 2.1875rem;
+  --text-h5: 1.875rem;
+
+  /* ==== Border Radii ==== */
+  --radius-btn: 2.625rem;
+  --radius-img: 1.25rem;
+  --radius-card: 1.25rem;
 }
-
-/* ==== Spacing ==== */
-
-/* ==== Typography ==== */
-
-/* ==== Border Radii ==== */
