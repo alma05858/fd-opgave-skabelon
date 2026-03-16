@@ -1,8 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Hero.astro";
+import employees from "@data/employees.json";
+import Experience from "@components/Experience.astro";
+
+console.log(employees);
 ---
 
 <Layout>
   <Hero />
+  <Experience />
 </Layout>
