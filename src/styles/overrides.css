@@ -6,3 +6,21 @@
 img + * {
   margin-block-start: var(--flow-space, 3em);
 }
+
+body {
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [content] minmax(0, 1200px)
+    1fr [full-end];
+}
+
+header {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+  background-color: aquamarine;
+
+  > * {
+    grid-column: content;
+  }
+}
