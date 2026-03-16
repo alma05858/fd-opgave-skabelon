@@ -1,0 +1,152 @@
+<section class="experience">
+  <div class="experience__content">
+    <div class="experience__text">
+      <span class="experience__label">EXPERIENCE</span>
+      <h2 class="experience__heading">More than 25 years<br />of experience</h2>
+      <p class="experience__sub">
+        3000+ our clients are insured around the World
+      </p>
+    </div>
+
+    <div class="experience__stats">
+      <div class="experience__stat">
+        <div class="ring" style="--value: 85;"></div>
+        <p class="experience__name">Consistency</p>
+      </div>
+      <div class="experience__stat">
+        <div class="ring" style="--value: 95;"></div>
+        <p class="experience__name">Improvement</p>
+      </div>
+      <div class="experience__stat">
+        <div class="ring" style="--value: 90;"></div>
+        <p class="experience__name">Branching</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @property --animatedNumber {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: true;
+  }
+
+  .ring {
+    --animatedNumber: var(--value);
+    width: 130px;
+    aspect-ratio: 1;
+    --percentage: calc(var(--animatedNumber) * 1%);
+    --bd: 6px;
+    --ring-color: #fff;
+    --track-color: rgba(255, 255, 255, 0.3);
+
+    position: relative;
+    border: var(--bd) solid transparent;
+    border-radius: 999px;
+
+    background:
+      radial-gradient(
+          circle at 50% calc(var(--bd) / 2),
+          var(--ring-color) calc(var(--bd) / 2),
+          transparent 0
+        )
+        border-box,
+      linear-gradient(#f5b800) padding-box,
+      conic-gradient(var(--ring-color) var(--percentage), var(--track-color) 0)
+        border-box;
+
+    display: grid;
+    container: stat / inline-size;
+    transition: --animatedNumber 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::after {
+      counter-reset: val round(var(--animatedNumber));
+      grid-area: 1 / 1;
+      content: counter(val) "%";
+      place-self: center;
+      font-size: 28cqw;
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+      font-weight: 800;
+      color: #1a1a1a;
+      font-family: sans-serif;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(var(--bd) * 2);
+      aspect-ratio: 1;
+      border-radius: calc(infinity * 1px);
+      background: #1a1a1a;
+      offset: border-box var(--percentage);
+      offset-anchor: 50% calc(50% - var(--bd) / 2);
+    }
+  }
+
+  .experience {
+    background-color: #f5b800;
+    padding: 4rem 2rem;
+  }
+
+  .experience__content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .experience__text {
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .experience__label {
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .experience__heading {
+    /*font-size: clamp(1.6rem, 3vw, 2.4rem);*/
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    font-family: sans-serif;
+  }
+
+  .experience__sub {
+    font-size: 0.85rem;
+    color: #1a1a1a;
+    font-family: sans-serif;
+    margin: 0;
+  }
+
+  .experience__stats {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .experience__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .experience__name {
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+  }
+</style>
