@@ -1,0 +1,40 @@
+---
+import employees from "../../data/employees.json";
+
+export async function getStaticPaths() {
+  return employees.map((employee) => ({
+    params: { employees: employee.slug },
+    props: { employee },
+  }));
+}
+
+const { employee } = Astro.props;
+---
+
+<section>
+  <div>
+    <img src={employee.img} />
+  </div>
+  <div>
+    <h2>{employee.name}</h2>
+    <p>{employee.title}</p>
+    <p>{employee.description_long}</p>
+    <h2>Past experience</h2>
+    <p>{employee.past_experience}</p>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    img {
+      width: 100%;
+      aspect-ratio: 9 / 10;
+      object-fit: cover;
+      display: block;
+      border-radius: 1.25rem;
+    }
+  }
+</style>

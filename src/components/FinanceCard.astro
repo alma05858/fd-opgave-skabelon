@@ -1,23 +1,18 @@
 ---
 import "../styles/tokens.css";
-const { title, description, more } = Astro.props;
-import ArrowRight from "../icons/arrow--right.svg";
+const { title, description } = Astro.props;
 ---
 
-<article class="card4item">
+<article class="finace-card">
   <div class="icon">
     <slot name="icon" />
   </div>
   <h4>{title}</h4>
   <p>{description}</p>
-  <div class="more">
-    <a href="/index">{more}</a>
-    <ArrowRight />
-  </div>
 </article>
 
 <style>
-  .card4item {
+  .finace-card {
     display: grid;
     grid-row: span 4;
     grid-template-rows: subgrid;
@@ -25,13 +20,12 @@ import ArrowRight from "../icons/arrow--right.svg";
     gap: 0.5rem;
     border-radius: 1.25rem;
     border: 1px solid #eaeaea;
-    background-color: #fff;
-    color: var(--color-neutrals-900);
+    background: #fff;
     padding: 1rem;
   }
 
   @supports not (grid-template-rows: subgrid) {
-    .card4item {
+    .finace {
       grid-row: unset;
       grid-template-rows: unset;
       align-content: start;
@@ -50,15 +44,5 @@ import ArrowRight from "../icons/arrow--right.svg";
     color: var(--color-neutrals-50);
     width: 1.5rem;
     height: 1.5rem;
-  }
-
-  .more {
-    display: inline-flex;
-    gap: 1rem;
-
-    a {
-      text-decoration: none;
-      color: #1c1c1c;
-    }
   }
 </style>

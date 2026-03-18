@@ -1,0 +1,52 @@
+---
+import "../styles/tokens.css";
+import EmployeeCard from "../components/EmployeeCard.astro";
+import employees from "@data/employees.json";
+
+console.log(employees);
+---
+
+<section>
+  <div>
+    <p>OUR TEAM</p>
+    <h2>We champion the bold</h2>
+    <p>
+      Our success stems from the synergy between dedicated teams and our valued
+      clients. We prioritize a company culture that fosters exceptional
+      productivity, ensures customer satisfaction.
+    </p>
+    <button>Meet the Team</button>
+  </div>
+
+  <div>
+    {
+      employees
+        .slice(0, 2)
+        .map((employee) => (
+          <EmployeeCard
+            img={employee.img}
+            name={employee.name}
+            title={employee.title}
+            slug={employee.slug}
+            description={employee.description}
+          />
+        ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  button {
+    color: var(--color-on-ui-primary);
+    background-color: var(--color-neutrals-900);
+    border-radius: var(--radius-btn);
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    align-self: center;
+  }
+</style>
