@@ -1,1 +1,14 @@
 /* Globale styles her */
+.square {
+  background-color: var(--color-ui-secondary);
+  width: 126.277px;
+  height: 113.166px;
+  border-radius: var(--radius-img);
+}
+
+.square2 {
+  background-color: var(--color-ui-secondary);
+  width: 126.277px;
+  height: 113.166px;
+  border-radius: var(--radius-img);
+}

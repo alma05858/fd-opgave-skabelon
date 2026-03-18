@@ -1,0 +1,48 @@
+---
+import DescriptionCard from "./DescriptionCard.astro";
+---
+
+<section class="forsidecard">
+  <div class="container">
+    <div class="square">
+      <p></p>
+    </div>
+    <img src="src/assets/images/forsideimgunderhero.jpg" alt="" />
+  </div>
+
+  <section class="card">
+    <DescriptionCard
+      minitext="WE'LL WORK WITH YOU"
+      title="What To Expect"
+      text="Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals."
+      bulletpoint1="Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes."
+      bulletpoint2="Identify opportunities to optimize processes and implement impactful solutions with measurable results."
+      section
+    />
+  </section>
+</section>
+
+<style>
+  .forsidecard {
+    padding: 100px;
+    gap: 64px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 650px;
+  }
+  .square {
+    position: absolute;
+  }
+
+  img {
+    margin-top: 25px;
+    margin-left: 25px;
+    position: relative;
+    z-index: 2;
+    border-radius: var(--radius-img);
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+  }
+</style>

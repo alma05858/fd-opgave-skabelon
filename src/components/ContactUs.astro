@@ -1,0 +1,208 @@
+---
+import Phone from "../icons/phone.svg";
+import Clock from "../icons/clock.svg";
+import Pin from "../icons/pin.svg";
+---
+
+<section class="contact-section">
+  <div class="contact-left">
+    <p class="contact-label">Process</p>
+    <h2 class="contact-heading">Contact Us. It's Easy.</h2>
+    <p class="contact-body">
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews. Iterative approaches to corporate strategy foster
+      collaborative.
+    </p>
+
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="icon-bubble phone">
+          <Phone class="phone" />
+        </div>
+        <div class="contact-item-text">
+          <span>Call Today</span>
+          <strong>+1 800 100 900</strong>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="icon-bubble clock">
+          <Clock class="clock" />
+        </div>
+        <div class="contact-item-text">
+          <span>Monday To Friday</span>
+          <strong>9AM - 5PM</strong>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="icon-bubble pin">
+          <Pin class="pin" />
+        </div>
+
+        <div class="contact-item-text">
+          <span>USA Office</span>
+          <strong>195 Devonshire St Boston,<br />MA 02110</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- image griddet -->
+  <div class="contact-images">
+    <div class="accent-block"></div>
+
+    <div class="img-main">
+      <img src="src/assets/images/maincontactimg.jpg" alt="woman sitting" />
+    </div>
+
+    <div class="img-top-right">
+      <img src="src/assets/images/right1img.jpg" alt="coworkers" />
+    </div>
+
+    <div class="img-bottom-right">
+      <img src="src/assets/images/right2img.jpg" alt="coworkers" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    max-width: 400px;
+    padding: 50px;
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .contact-body {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 36ch;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .icon-bubble {
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-bubble.phone {
+    background-color: #fef3c7;
+  }
+
+  .icon-bubble.clock {
+    background-color: #d1fae5;
+  }
+
+  .icon-bubble.pin {
+    background-color: #f3f4f6;
+    border: 1.5px solid #e5e7eb;
+  }
+
+  .icon {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .icon.phone {
+    color: #d97706;
+  }
+
+  .icon.clock {
+    color: #059669;
+  }
+
+  .icon.pin {
+    color: #374151;
+  }
+
+  .contact-item-text span {
+    display: block;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 0.1rem;
+  }
+
+  .contact-item-text strong {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+  }
+
+  .contact-images {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem;
+    max-width: 450px;
+    justify-self: end;
+  }
+
+  /* den der lime boks */
+  .accent-block {
+    position: absolute;
+    bottom: -1rem;
+    right: 18.25rem;
+    width: 190px;
+    height: 100px;
+    background-color: var(--color-ui-secondary);
+    border-radius: var(--radius-img);
+    z-index: 0;
+  }
+
+  .img-main {
+    grid-row: 1 / 3;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.875rem;
+    overflow: hidden;
+  }
+
+  .img-top-right,
+  .img-bottom-right {
+    border-radius: var(--radius-img);
+    overflow: hidden;
+  }
+
+  .contact-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

@@ -1,0 +1,86 @@
+---
+import DescriptionCard from "./DescriptionCard.astro";
+---
+
+<section class="aboutcard">
+  <section class="card">
+    <DescriptionCard
+      minitext="OUR VISION"
+      title="Turn your ideas into reality."
+      text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+      bulletpoint1="Bring to the table win-win survival strategies to ensure proactive
+        domination. At the end of the day."
+      bulletpoint2="Capitalize on low hanging fruit
+        to identify a ballpark value added activity to beta test override the digital."
+      section
+    />
+  </section>
+
+  <div class="container">
+    <div class="square2">
+      <p></p>
+    </div>
+
+    <img src="src/assets/images/aboutimg.jpg" alt="medarbejder" />
+  </div>
+
+  <div class="stats">
+    <div>
+      <h4>1128+</h4>
+      <p>Successful Work</p>
+    </div>
+
+    <div>
+      <h4>908+</h4>
+      <p>Team member</p>
+    </div>
+
+    <div>
+      <h4>258+</h4>
+      <p>Happy Customers</p>
+    </div>
+
+    <div>
+      <h4>564+</h4>
+      <p>Creative Idea</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .aboutcard {
+    padding: 100px;
+    gap: 64px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 650px;
+  }
+  .square2 {
+    position: absolute;
+    right: 100px;
+  }
+
+  img {
+    margin-top: 25px;
+    margin-left: 25px;
+    position: relative;
+    z-index: 2;
+    border-radius: var(--radius-img);
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+
+    h4 {
+      font-family: var(----font-text);
+      font-size: var(--text-h4);
+      font-weight: 700;
+    }
+  }
+</style>

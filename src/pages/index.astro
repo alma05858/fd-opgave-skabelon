@@ -3,11 +3,17 @@ import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Hero.astro";
 import employees from "@data/employees.json";
 import Experience from "@components/Experience.astro";
+import DescriptionForside from "@components/DescriptionForside.astro";
+import Aboutsection from "@components/Aboutsection.astro";
+import ContactUs from "@components/ContactUs.astro";
 
 console.log(employees);
 ---
 
 <Layout>
   <Hero />
+  <DescriptionForside />
+  <Aboutsection />
   <Experience />
+  <ContactUs />
 </Layout>
