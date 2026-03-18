@@ -1,0 +1,61 @@
+---
+import "../styles/tokens.css";
+import EmployeeCard from "../components/EmployeeCard.astro";
+import employees from "@data/employees.json";
+import Instagram from "../icons/instagram.svg";
+import Facebook from "../icons/facebook.svg";
+
+console.log(employees);
+---
+
+<section>
+  <h2>Meet Our Great Team</h2>
+  <div class="p-btn">
+    <p>
+      Welcome to our amazing team! We are a group of passionate individuals
+      dedicated to excellence and innovation. Each member brings unique skills
+      and experiences, working together to achieve our goals. Join us as we
+      embark on exciting projects and create lasting impacts.
+    </p>
+    <button>Join our team</button>
+  </div>
+  <div class="employees">
+    {
+      employees.map((employee) => (
+        <EmployeeCard
+          img={employee.img}
+          title={employee.title}
+          name={employee.name}
+          description={employee.description}
+          slug={employee.slug}
+          social_links={employee.social_links}
+          icons={{ instagram: Instagram, facebook: Facebook }}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .employees {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .p-btn {
+    display: inline-flex;
+
+    p {
+      max-width: 70ch;
+    }
+
+    button {
+      color: var(--color-on-ui-primary);
+      background-color: var(--color-neutrals-900);
+      border-radius: var(--radius-btn);
+      padding: 0.8rem 1.5rem;
+      cursor: pointer;
+      align-self: center;
+    }
+  }
+</style>
