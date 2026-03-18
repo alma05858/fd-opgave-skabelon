@@ -23,7 +23,7 @@ footer {
   display: grid;
   grid-column: full;
   grid-template-columns: subgrid;
-  background-color: aquamarine;
+  background: var(--color-surface-elevated-transparent, rgba(16, 24, 40, 0.9));
 
   > * {
     grid-column: content-start / content-end;
@@ -135,5 +135,25 @@ footer {
 
   .accordion-content {
     grid-column: content-start / content-end;
+  }
+}
+
+.hero {
+  background-color: var(--color-neutrals-900);
+  grid-column: full;
+  display: grid;
+  position: relative;
+  grid-template-columns: subgrid;
+
+  .image-hero {
+    grid-column: content-mid / full-end;
+  }
+
+  .hero-content {
+    grid-column: content-start / content-mid;
+  }
+
+  .hero-text {
+    grid-column: content-start / content-mid;
   }
 }

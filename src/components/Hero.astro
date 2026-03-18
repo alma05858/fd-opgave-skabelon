@@ -2,20 +2,28 @@
 import { Image } from "astro:assets";
 import Services from "./Services.astro";
 import CEOImage from "@assets/images/ceo.webp";
+import ArrowRight from "../icons/arrow--right.svg";
 ---
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Empowering Your Business Growth</h1>
-    <p>
-      Discover tailored strategies and expert insights to take your business to
-      the next level. Let us help you navigate challenges and achieve
-      sustainable success.
-    </p>
-    <a href="#0">Book a Meeting</a>
-    <a href="#0">Learn More</a>
+    <div class="hero-text">
+      <h1>Empowering Your Business Growth</h1>
+      <p>
+        Discover tailored strategies and expert insights to take your business
+        to the next level. Let us help you navigate challenges and achieve
+        sustainable success.
+      </p>
+
+      <div class="buttons">
+        <button class="hero-btn">Book a Meeting</button>
+        <button class="hero-btn2"
+          >Learn More <ArrowRight class="Arrow" />
+        </button>
+      </div>
+    </div>
   </div>
-  <Image src={CEOImage} alt="CEO" />
+  <Image class="image-hero" src={CEOImage} alt="CEO" />
 
   <Services />
 </section>
@@ -24,14 +32,76 @@ import CEOImage from "@assets/images/ceo.webp";
   /* Styles her */
   @layer components {
     .hero {
-      background-color: #f3f4f6;
-      grid-column: full;
-      display: grid;
-      grid-template-columns: subgrid;
+      height: 600px;
+    }
 
-      .hero-content {
-        grid-column: content;
+    .image-hero {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .hero-content {
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      /* wrapper til knapperne */
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
       }
+    }
+
+    h1 {
+      color: var(--color-on-ui-primary);
+    }
+
+    p {
+      color: var(--color-on-ui-primary-muted);
+    }
+    .hero-btn {
+      color: var(--color-neutrals-900);
+      background-color: var(--color-yellow-500);
+      border: var(--color-yellow-500);
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      align-self: center;
+      display: flex;
+      padding: 16px 31px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .hero-btn2 {
+      color: var(--color-on-ui-primary);
+      background-color: var(--color-ui-primary);
+      border-radius: var(--radius-btn);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      align-self: center;
+      display: flex;
+      padding: 16px 31px;
+      align-items: center;
+      gap: 16px;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .Arrow {
+      height: 10px;
     }
   }
 </style>
