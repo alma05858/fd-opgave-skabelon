@@ -93,3 +93,47 @@ footer {
     grid-column: content-mid / content-end;
   }
 }
+
+.our-team2 {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .our-team2-content {
+    grid-column: content-start / content-end;
+  }
+}
+
+.our-team1 {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .our-team-champion {
+    grid-column: content-start / content-mid;
+  }
+
+  .employee2 {
+    grid-column: content-mid / content-end;
+  }
+}
+
+#card4-content {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .card4-content {
+    grid-column: content-start / content-end;
+  }
+}
+
+.accordion-container {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .accordion-content {
+    grid-column: content-start / content-end;
+  }
+}

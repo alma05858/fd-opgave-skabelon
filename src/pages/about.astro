@@ -1,0 +1,22 @@
+---
+import Layout from "@layouts/Layout.astro";
+import LayoutAccordion from "@layouts/LayoutAccordion.astro";
+import AccordionContainer from "../components/AccordionContainer.astro";
+import faqData from "../data/faq2.json";
+import OurTeam1 from "../components/OurTeam1.astro";
+import Card4 from "../components/Card4.astro";
+import Aboutsection from "@components/Aboutsection.astro";
+---
+
+<Layout>
+  <Aboutsection />
+  <Card4 variant="light" />
+  <OurTeam1 />
+  <LayoutAccordion title="Welcome to Astro.">
+    <main>
+      <p>FAQ</p>
+      <h1>Customer Questions</h1>
+      <AccordionContainer data={faqData} exclusive={true} />
+    </main>
+  </LayoutAccordion>
+</Layout>

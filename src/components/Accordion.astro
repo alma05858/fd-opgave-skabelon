@@ -4,17 +4,21 @@ const { exclusive, ...props } = Astro.props;
 const { id, question, answer, linkBlock } = props;
 ---
 
-<details {id} {...exclusive ? { name: "faq2" } : {}}>
-  <summary>
-    <span>
-      {question}
-      <PlusIcon />
-    </span>
-  </summary>
-  <div class="answer">
-    {answer.map((a) => <p set:html={a} />)}
+<section class="accordion-container">
+  <div class="accordion-content">
+    <details {id} {...exclusive ? { name: "faq2" } : {}}>
+      <summary>
+        <span>
+          {question}
+          <PlusIcon />
+        </span>
+      </summary>
+      <div class="answer">
+        {answer.map((a) => <p set:html={a} />)}
+      </div>
+    </details>
   </div>
-</details>
+</section>
 
 <style>
   details {
