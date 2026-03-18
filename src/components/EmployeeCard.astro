@@ -1,0 +1,75 @@
+---
+import "../styles/tokens.css";
+const {
+  name,
+  img,
+  title,
+  description,
+  social_links = [],
+  icons = {},
+  slug,
+} = Astro.props;
+---
+
+<article>
+  <div class="card">
+    <div class="img">
+      <img src={img} alt={name} />
+    </div>
+    <div class="content">
+      <h5>{name}</h5>
+      <a href={`/employees/${slug}`} class="title">{title}</a>
+      <p>{description}</p>
+      <div class="socials">
+        {
+          social_links.map((link) => {
+            const Icon = icons[link.platform];
+            return (
+              <a href={link.url} aria-label={link.platform}>
+                {Icon && <Icon />}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+
+  <style>
+    img {
+      width: 100%;
+      aspect-ratio: 9 / 10;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--radius-img);
+      grid-row: 1/2;
+    }
+
+    .title {
+      z-index: 1000;
+      grid-row: 1/2;
+    }
+
+    article {
+      container: card / inline-size;
+    }
+    .card {
+      display: grid;
+      text-align: center;
+
+      @container card (width > 500px) {
+        grid-template-columns: 150px 1fr;
+        text-align: left;
+      }
+    }
+
+    .socials {
+    }
+
+    .socials :global(svg) {
+      color: var(--color-neutrals-900);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  </style>
+</article>
