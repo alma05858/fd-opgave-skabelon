@@ -1,0 +1,12 @@
+---
+import "../styles/tokens.css";
+const { title, description, page, variant = "left" } = Astro.props;
+---
+
+<section class={`hero2 hero2--${variant}`}>
+  <div class="hero2-content">
+    <p>{page}</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </div>
+</section>
