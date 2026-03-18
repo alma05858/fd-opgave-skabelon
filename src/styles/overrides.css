@@ -10,7 +10,10 @@ img + * {
 body {
   display: grid;
   grid-template-columns:
-    [full-start] 1fr [content-start] minmax(0, 600px) minmax(0, 600px)
+    [full-start] 1fr [content-start] minmax(0, 600px) [content-mid] minmax(
+      0,
+      600px
+    )
     [content-end]
     1fr [full-end];
 }
@@ -42,5 +45,51 @@ footer {
 
   > div {
     grid-column: content-start / content-end;
+  }
+}
+
+.forsidecard {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  > .container {
+    grid-column: content-start / content-mid;
+  }
+
+  > .card {
+    grid-column: content-mid / content-end;
+  }
+}
+
+.aboutcard {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  > .square2 {
+    grid-column: content-mid / content-end;
+  }
+
+  > .card {
+    grid-column: content-start / content-mid;
+  }
+
+  .stats {
+    grid-column: content-start / content-end;
+  }
+}
+
+.contact-section {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .contact-left {
+    grid-column: content-start / content-mid;
+  }
+
+  .contact-images {
+    grid-column: content-mid / content-end;
   }
 }
