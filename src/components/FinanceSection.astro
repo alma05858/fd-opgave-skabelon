@@ -1,0 +1,94 @@
+---
+import "../styles/tokens.css";
+import FinanceCard from "../components/FinanceCard.astro";
+import Cal from "../icons/cal.svg";
+import Card from "../icons/card.svg";
+import Law from "../icons/law.svg";
+import Money from "../icons/money.svg";
+import ArrowRight from "../icons/arrow--right.svg";
+import ArrowLeft from "../icons/arrow-left.svg";
+---
+
+<section>
+  <div>
+    <p>Financial Tools</p>
+    <h2>Financial Projections</h2>
+    <div class="p-arrow">
+      <p>
+        Financial projections are essential for planning and monitoring a
+        company’s performance. They provide insights into potential revenue,
+        expenses, and profitability over specific periods.
+      </p>
+      <div class="arrow">
+        <button><ArrowLeft /></button>
+        <button><ArrowRight /></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <FinanceCard
+      title="The Balance Sheet"
+      description="The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time."
+    >
+      <Cal slot="icon" />
+    </FinanceCard>
+
+    <FinanceCard
+      title="Income Statement"
+      description="The Income (Profit and Loss) Statement, commonly referred to as the P&L statement, summarizes the revenue and expenses for a specific time period (one month, one quarter, one year, etc.)"
+    >
+      <Card slot="icon" />
+    </FinanceCard>
+
+    <FinanceCard
+      title="Financial Plan"
+      description="Keep your information current and review the documents on a regular basis (monthly or more often if needed). Review them with key individuals within your company."
+    >
+      <Law slot="icon" />
+    </FinanceCard>
+
+    <FinanceCard
+      title="Financial Ratios"
+      description="Ratios are useful when comparing your company with the competition on financial performance and also when benchmarking the performance of your company."
+    >
+      <Money slot="icon" />
+    </FinanceCard>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--color-neutrals-200);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .p-arrow {
+    display: inline-flex;
+
+    p {
+      max-width: 65ch;
+    }
+
+    .arrow {
+      display: flex;
+      gap: 1.625rem;
+    }
+    button {
+      color: var(--color-on-ui-primary);
+      background-color: var(--color-neutrals-900);
+      border-radius: var(--radius-btn);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+    }
+  }
+</style>
