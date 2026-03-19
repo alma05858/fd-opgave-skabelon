@@ -52,6 +52,16 @@ const { id, question, answer, linkBlock } = props;
     justify-content: space-between;
   }
 
+  @supports not (padding: 1rlh) {
+    summary span {
+      padding-block: 1rem;
+    }
+
+    .answer {
+      padding-bottom: 1rem;
+    }
+  }
+
   summary span svg {
     inline-size: auto;
     height: 1lh;
