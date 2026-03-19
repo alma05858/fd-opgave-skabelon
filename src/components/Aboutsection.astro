@@ -85,4 +85,24 @@ import { Image } from "astro:assets";
       font-weight: 700;
     }
   }
+
+  @media (max-width: 768px) {
+    .aboutcard {
+      padding: 24px;
+      gap: 32px;
+    }
+
+    .container {
+      display: none; /* skjuler billede + grøn boks */
+    }
+
+    .card {
+      width: 100%;
+    }
+
+    .stats {
+      grid-template-columns: repeat(2, 1fr); /* 2x2 i stedet for 4x1 */
+      gap: 2rem;
+    }
+  }
 </style>

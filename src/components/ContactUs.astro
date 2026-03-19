@@ -72,30 +72,31 @@ import { Image } from "astro:assets";
 
 <style>
   .contact-section {
-    max-width: 400px;
     padding: 50px;
   }
 
   .contact-label {
-    font-size: 0.7rem;
+    font-size: var(--text-p);
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #6b7280;
+    color: var(--color-neutrals-900);
     margin-bottom: 0.6rem;
   }
 
   .contact-heading {
-    font-size: 2.25rem;
+    font-size: var(--text-h2);
+    font-family: var(--font-heading);
     font-weight: 700;
-    color: #111827;
+    color: var(--color-neutrals-900);
     line-height: 1.2;
     margin-bottom: 1rem;
   }
 
   .contact-body {
     font-size: 0.9rem;
-    color: #6b7280;
+    font-family: var(--font-text);
+    color: var(--color-neutrals-700);
     line-height: 1.75;
     margin-bottom: 2.5rem;
     max-width: 36ch;

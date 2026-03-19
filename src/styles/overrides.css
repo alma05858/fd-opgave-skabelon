@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:wght@400;700&display=swap");
 /* Override styles here */
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
-}
-
-img + * {
-  margin-block-start: var(--flow-space, 3em);
-}
 
 body {
   display: grid;
@@ -24,7 +17,6 @@ footer {
   display: grid;
   grid-column: full;
   grid-template-columns: subgrid;
-  background: var(--color-surface-elevated-transparent, rgba(16, 24, 40, 0.9));
 
   > * {
     grid-column: content-start / content-end;

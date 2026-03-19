@@ -7,7 +7,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
 <section class="Case-study">
   <article>
-    <div>
+    <div class="case-header">
       <DynamicImage src={image} alt={caseName} />
       <div class="case-details">
         <dl>
@@ -56,7 +56,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
             <DynamicImage
               src={section.image}
               alt={section.title}
-              width={600}
+              width={500}
               height={400}
             />
           )}
@@ -66,4 +66,169 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
   </article>
 </section>
 
-<style></style>
+<style>
+  .case-header {
+    position: relative; /* ankerpunkt for den absolutte boks */
+    padding-bottom: 100px;
+  }
+
+  .case-header img {
+    width: 100%;
+    justify-self: center;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-img);
+  }
+
+  .case-details {
+    position: absolute;
+    bottom: 0;
+    left: 5.5rem;
+    right: 0;
+    background: var(--color-neutrals-900);
+    width: 64.25rem;
+    padding: 3.3125rem 3.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--radius-img) var(--radius-img);
+  }
+
+  dl {
+    display: flex;
+    gap: 3rem;
+  }
+
+  dl div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  dt {
+    color: var(--color-neutrals-100);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  dd {
+    color: white;
+    font-weight: 600;
+  }
+
+  .button {
+    background: var(--color-yellow-500, #f5b800);
+    color: var(--color-neutrals-900);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-btn);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .flow {
+    width: 800px;
+    margin-inline: auto;
+    margin-top: 90px;
+
+    .flow:last-child {
+      margin-bottom: 300px;
+    }
+  }
+
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1.86rem);
+  }
+
+  img + * {
+    margin-block-start: var(--flow-space, 3em);
+  }
+
+  article {
+    --flow-space: 1.86rem;
+  }
+
+  h2 {
+    --flow-space: 5rem; /* ekstra luft over nye sektioner */
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    --flow-space: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  p {
+    --flow-space: 1rem;
+    line-height: 1.7;
+    color: var(--color-neutrals-600, #4a4a4a);
+  }
+
+  ul {
+    --flow-space: 1rem;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  section.flow img {
+    --flow-space: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius-img);
+    display: block;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 768px) {
+    .case-header img {
+      height: 250px;
+    }
+
+    .case-details {
+      position: static;
+      width: 100%;
+      left: unset;
+      padding: 1.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      border-radius: 0 0 var(--radius-img) var(--radius-img);
+    }
+
+    .case-header {
+      padding-bottom: 0;
+    }
+
+    dl {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .flow {
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      --flow-space: 2rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      --flow-space: 1.5rem;
+    }
+
+    section.flow img {
+      max-width: 100%;
+      height: 220px;
+    }
+  }
+</style>
