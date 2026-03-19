@@ -26,6 +26,10 @@ const { id, question, answer, linkBlock } = props;
     border-bottom: 1px solid #dadada;
   }
 
+  .accordion-container {
+    margin-inline: auto;
+  }
+
   summary {
     font-weight: 700;
     color: #181818;
@@ -52,6 +56,16 @@ const { id, question, answer, linkBlock } = props;
     justify-content: space-between;
   }
 
+  @supports not (padding: 1rlh) {
+    summary span {
+      padding-block: 1rem;
+    }
+
+    .answer {
+      padding-bottom: 1rem;
+    }
+  }
+
   summary span svg {
     inline-size: auto;
     height: 1lh;
@@ -69,5 +83,39 @@ const { id, question, answer, linkBlock } = props;
 
   .link-block {
     display: block;
+  }
+
+  details[open] summary span svg {
+    transform: rotate(45deg);
+  }
+
+  summary span svg {
+    transition: transform 0.3s ease;
+  }
+
+  /* Animer selve svaret når det folder ud */
+  .answer {
+    animation: fadeDown 0.2s ease;
+  }
+
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    summary span svg {
+      transition: none;
+    }
+
+    .answer {
+      animation: none;
+    }
   }
 </style>
