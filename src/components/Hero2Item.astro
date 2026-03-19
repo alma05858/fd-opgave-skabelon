@@ -10,3 +10,24 @@ const { title, description, page, variant = "left" } = Astro.props;
     <p>{description}</p>
   </div>
 </section>
+
+<style>
+  .hero2-content {
+    max-width: 70ch;
+    text-align: center;
+    margin: 100px 0;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    margin: 15px;
+  }
+
+  p {
+    font-family: var(--font-text);
+    font-size: var(--text-p);
+    font-weight: 400;
+  }
+</style>

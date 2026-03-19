@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:wght@400;700&display=swap");
 /* Override styles here */
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
@@ -165,5 +166,49 @@ footer {
 
   article {
     grid-column: content-start / content-end;
+  }
+}
+
+.hero2 {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .hero2-content {
+    grid-column: content-start / content-end;
+  }
+}
+
+.hero1 {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .hero1-content {
+    grid-column: content-start / content-end;
+  }
+}
+
+.our-team2 {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .our-team2-content {
+    grid-column: content-start / content-end;
+  }
+}
+
+.our-team1 {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  .our-team-champion {
+    grid-column: content-start / content-mid;
+  }
+
+  .employee2 {
+    grid-column: content-mid / content-end;
   }
 }
