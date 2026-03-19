@@ -212,3 +212,14 @@ footer {
     grid-column: content-mid / content-end;
   }
 }
+
+@media (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+
+    section {
+      flex-direction: column;
+    }
+  }
+}
