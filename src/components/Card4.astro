@@ -115,4 +115,11 @@ const { variant = "light" } = Astro.props;
     font-size: var(--text-h2);
     margin-bottom: 10px;
   }
+
+  @media (max-width: 600px) {
+    .cards {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 </style>
