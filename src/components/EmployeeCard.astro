@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import "../styles/tokens.css";
 const {
   name,
@@ -9,12 +11,16 @@ const {
   icons = {},
   slug,
 } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/data/images/*.{jpeg,jpg,png,gif,webp}",
+);
 ---
 
 <article>
   <div class="card">
     <div class="img">
-      <img src={img} alt={name} />
+      <Image src={images[img]()} alt={name} />
     </div>
     <div class="content">
       <h5>{name}</h5>
