@@ -20,7 +20,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <article>
   <div class="card">
     <div class="img">
-      <Image src={images[img]()} alt={name} />
+      <a href={`/employees/${slug}`}>
+        <Image src={images[img]()} alt={name} />
+      </a>
     </div>
     <div class="content">
       <h5>{name}</h5>
@@ -50,13 +52,22 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     p {
       margin-bottom: 12px;
     }
+
     .img {
+      a {
+        display: block;
+        position: relative;
+      }
       img {
         width: 100%;
         aspect-ratio: 9 / 10;
         object-fit: cover;
         display: block;
         border-radius: var(--radius-img);
+
+        &:hover {
+          opacity: 0.9;
+        }
       }
       @container card (width < 500px) {
         grid-row: 1 / 2;
@@ -104,6 +115,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         }
 
         .title {
+          z-index: 1;
           grid-row: 1 / 2;
           align-self: end;
           justify-self: end;
