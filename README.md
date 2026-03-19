@@ -145,7 +145,7 @@ margin-top: auto;
 Det blev brugt til vores servicecard på forsiden og det skubbe links ned i bunden af cardsne.
 
 - Reflekter over, hvor i løsningen, der er brugt progressive enhancement og gennemgå kort, hvordan det er løst.
-  Vi har brugt progressive enhancement ved at sikre at al funktionalitet ligger i HTML, og CSS bruges udelukkende til visuel forbedring — ikke til at gøre tingene funktionelle. Dette kan være den mindre animation vi har lavet ved hjælp af CSS som forbedre oplevelsen for brugeren visuel men som godt kan undlades.
+  Vi har brugt progressive enhancement ved at sikre at al funktionalitet ligger i HTML, og at CSS genrelt bruges til visuel forbedring og ikke til at gøre tingene funktionelle.
 
 - Forklar, hvordan du har organiseret din CSS; hvornår er det globalt, og hvornår er det komponent-specifikt.
 
