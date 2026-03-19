@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import "../styles/tokens.css";
 const {
   name,
@@ -9,12 +11,18 @@ const {
   icons = {},
   slug,
 } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/data/images/*.{jpeg,jpg,png,gif,webp}",
+);
 ---
 
 <article>
   <div class="card">
     <div class="img">
-      <img src={img} alt={name} />
+      <a href={`/employees/${slug}`}>
+        <Image src={images[img]()} alt={name} />
+      </a>
     </div>
     <div class="content">
       <h5>{name}</h5>
@@ -36,26 +44,46 @@ const {
   </div>
 
   <style>
-    img {
-      width: 100%;
-      aspect-ratio: 9 / 10;
-      object-fit: cover;
-      display: block;
-      border-radius: var(--radius-img);
-      grid-row: 1/2;
+    h5 {
+      font-size: var(--text-h5);
+      margin: 10px 0;
     }
 
-    .title {
-      z-index: 1000;
-      grid-row: 1/2;
+    p {
+      margin-bottom: 12px;
+    }
+
+    .img {
+      a {
+        display: block;
+        position: relative;
+      }
+      img {
+        width: 100%;
+        aspect-ratio: 9 / 10;
+        object-fit: cover;
+        display: block;
+        border-radius: var(--radius-img);
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      @container card (width < 500px) {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+      }
     }
 
     article {
       container: card / inline-size;
     }
+
     .card {
       display: grid;
       text-align: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto auto;
 
       @container card (width > 500px) {
         grid-template-columns: 150px 1fr;
@@ -63,7 +91,41 @@ const {
       }
     }
 
-    .socials {
+    @container card (width < 500px) {
+      .content {
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+
+        h5 {
+          grid-row: 2 / 3;
+        }
+
+        p {
+          grid-row: 3 / 4;
+        }
+
+        .socials {
+          grid-row: 4 / 5;
+          display: flex;
+          justify-self: center;
+          gap: 15px;
+        }
+
+        .title {
+          z-index: 1;
+          grid-row: 1 / 2;
+          align-self: end;
+          justify-self: end;
+          background-color: black;
+          color: white;
+          border-radius: var(--radius-btn);
+          padding: 0.25rem 1.3125rem;
+          margin: 0 0.5rem 0.5rem 0;
+        }
+      }
     }
 
     .socials :global(svg) {

@@ -1,5 +1,7 @@
 ---
 import DescriptionCard from "./DescriptionCard.astro";
+import Medarbejder2 from "../assets/images/forsideimgunderhero.jpg";
+import { Image } from "astro:assets";
 ---
 
 <section class="forsidecard">
@@ -7,7 +9,7 @@ import DescriptionCard from "./DescriptionCard.astro";
     <div class="square">
       <p></p>
     </div>
-    <img src="src/assets/images/forsideimgunderhero.jpg" alt="" />
+    <Image src={Medarbejder2} alt="Mit billede" />
   </div>
 
   <section class="card">
@@ -24,8 +26,9 @@ import DescriptionCard from "./DescriptionCard.astro";
 
 <style>
   .forsidecard {
-    padding: 100px;
+    padding: 50px;
     gap: 64px;
+    margin-top: 200px;
   }
 
   .container {
@@ -44,5 +47,17 @@ import DescriptionCard from "./DescriptionCard.astro";
     border-radius: var(--radius-img);
     aspect-ratio: 5 / 3;
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .forsidecard {
+      padding: 24px;
+      margin-top: 48px; /* 200px er alt for meget på mobil */
+      gap: 32px;
+    }
+
+    .container {
+      max-width: 100%;
+    }
   }
 </style>

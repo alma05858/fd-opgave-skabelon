@@ -9,56 +9,62 @@ import Gear from "../icons/gear.svg";
 const { variant = "light" } = Astro.props;
 ---
 
-<section class={variant}>
-  <div>
-    <h5>Growing with our Clients</h5>
-    <h2>Our core values & principles</h2>
-    <div class="p-btn">
-      <p>
-        Capitalize on low hanging fruit to identify a ballpark value added
-        activity beta test. Override the digital divide with additional from
-        DevOps.
-      </p>
-      <button>Get in touch</button>
+<section class={variant} id="card4-content">
+  <div class="card4-content">
+    <div>
+      <h5>Growing with our Clients</h5>
+      <h2>Our core values & principles</h2>
+      <div class="p-btn">
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+        <button class="btn-hover">Get in touch</button>
+      </div>
     </div>
-  </div>
 
-  <div class="cards">
-    <Card4Item
-      title="Creative Ideas"
-      description="Explore innovative strategies tailored to your goals. Unlock unique solutions that inspire growth and creativity. Drive impactful change."
-      more="Read More"
-    >
-      <Layers slot="icon" />
-    </Card4Item>
+    <div class="cards">
+      <Card4Item
+        title="Creative Ideas"
+        description="Explore innovative strategies tailored to your goals. Unlock unique solutions that inspire growth and creativity. Drive impactful change."
+        more="Read More"
+      >
+        <Layers slot="icon" />
+      </Card4Item>
 
-    <Card4Item
-      title="Best Features"
-      description="Deliver advanced tools designed for seamless integration. Optimize workflows with cutting-edge technology."
-      more="Read More"
-    >
-      <Bars slot="icon" />
-    </Card4Item>
+      <Card4Item
+        title="Best Features"
+        description="Deliver advanced tools designed for seamless integration. Optimize workflows with cutting-edge technology."
+        more="Read More"
+      >
+        <Bars slot="icon" />
+      </Card4Item>
 
-    <Card4Item
-      title="Experience"
-      description="Leverage years of proven expertise across diverse industries. Empower your business with our skilled professionals. Achieve sustainable success."
-      more="Read More"
-    >
-      <Globe slot="icon" />
-    </Card4Item>
+      <Card4Item
+        title="Experience"
+        description="Leverage years of proven expertise across diverse industries. Empower your business with our skilled professionals. Achieve sustainable success."
+        more="Read More"
+      >
+        <Globe slot="icon" />
+      </Card4Item>
 
-    <Card4Item
-      title="Easy Solutions"
-      description="Streamline your challenges with simple, effective solutions. Ensure hassle-free implementation for measurable results."
-      more="Read More"
-    >
-      <Gear slot="icon" />
-    </Card4Item>
+      <Card4Item
+        title="Easy Solutions"
+        description="Streamline your challenges with simple, effective solutions. Ensure hassle-free implementation for measurable results."
+        more="Read More"
+      >
+        <Gear slot="icon" />
+      </Card4Item>
+    </div>
   </div>
 </section>
 
 <style>
+  button.btn-hover:hover {
+    background-color: var(--color-btn-hover);
+  }
+
   section.light {
     background-color: var(--color-neutrals-200);
   }
@@ -76,13 +82,18 @@ const { variant = "light" } = Astro.props;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    padding-top: 30px;
   }
 
   .p-btn {
     display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 
     p {
       max-width: 65ch;
+      font-family: var(--font-text);
     }
 
     button {
@@ -93,5 +104,15 @@ const { variant = "light" } = Astro.props;
       cursor: pointer;
       align-self: center;
     }
+  }
+
+  #card4-content {
+    padding: 100px 0;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    margin-bottom: 10px;
   }
 </style>

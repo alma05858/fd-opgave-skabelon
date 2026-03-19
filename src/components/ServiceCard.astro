@@ -15,18 +15,38 @@ import ArrowRight from "@icons/arrow--right.svg";
     article {
       background: var(--color-blue-700-transparent);
       color: var(--color-on-surface-elevated);
-      padding: 2rem; /* Dette burde være en token */
-      border-radius: 20px; /* Dette burde være en token */
+      border-radius: var(--radius-img);
+      display: flex;
+      height: 264px;
+      padding: 32px;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10px;
+      flex: 1 0 0;
     }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.8125rem;
+    }
+
     a {
-      display: inline flex;
+      display: inline-flex;
       gap: 1ch;
       color: var(--color-action);
       font-weight: bold;
+      margin-top: auto;
 
       svg {
         inline-size: 16px;
       }
+    }
+  }
+  @media (max-width: 768px) {
+    article {
+      height: auto; /* ikke fixed højde */
+      min-height: 200px; /* behold lidt luft */
     }
   }
 </style>

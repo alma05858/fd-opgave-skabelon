@@ -1,5 +1,7 @@
 ---
 import DescriptionCard from "./DescriptionCard.astro";
+import Medarbejder from "../assets/images/aboutimg.jpg";
+import { Image } from "astro:assets";
 ---
 
 <section class="aboutcard">
@@ -21,7 +23,7 @@ import DescriptionCard from "./DescriptionCard.astro";
       <p></p>
     </div>
 
-    <img src="src/assets/images/aboutimg.jpg" alt="medarbejder" />
+    <Image src={Medarbejder} alt="Mit billede" />
   </div>
 
   <div class="stats">

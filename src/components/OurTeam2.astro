@@ -1,5 +1,6 @@
 ---
 import "../styles/tokens.css";
+import "../styles/overrides.css";
 import EmployeeCard from "../components/EmployeeCard.astro";
 import employees from "@data/employees.json";
 import Instagram from "../icons/instagram.svg";
@@ -8,45 +9,55 @@ import Facebook from "../icons/facebook.svg";
 console.log(employees);
 ---
 
-<section>
-  <h2>Meet Our Great Team</h2>
-  <div class="p-btn">
-    <p>
-      Welcome to our amazing team! We are a group of passionate individuals
-      dedicated to excellence and innovation. Each member brings unique skills
-      and experiences, working together to achieve our goals. Join us as we
-      embark on exciting projects and create lasting impacts.
-    </p>
-    <button>Join our team</button>
-  </div>
-  <div class="employees">
-    {
-      employees.map((employee) => (
-        <EmployeeCard
-          img={employee.img}
-          title={employee.title}
-          name={employee.name}
-          description={employee.description}
-          slug={employee.slug}
-          social_links={employee.social_links}
-          icons={{ instagram: Instagram, facebook: Facebook }}
-        />
-      ))
-    }
+<section class="our-team2">
+  <div class="our-team2-content">
+    <h2>Meet Our Great Team</h2>
+    <div class="p-btn">
+      <p>
+        Welcome to our amazing team! We are a group of passionate individuals
+        dedicated to excellence and innovation. Each member brings unique skills
+        and experiences, working together to achieve our goals. Join us as we
+        embark on exciting projects and create lasting impacts.
+      </p>
+      <button>Join our team</button>
+    </div>
+    <div class="employees">
+      {
+        employees.map((employee) => (
+          <EmployeeCard
+            img={employee.img}
+            title={employee.title}
+            name={employee.name}
+            description={employee.description}
+            slug={employee.slug}
+            social_links={employee.social_links}
+            icons={{ instagram: Instagram, facebook: Facebook }}
+          />
+        ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
+  .our-team2 {
+    margin: 80px 0;
+  }
   .employees {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 3.1875rem;
   }
 
   .p-btn {
     display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 
     p {
       max-width: 70ch;
+      margin-bottom: 25px;
     }
 
     button {
@@ -57,5 +68,18 @@ console.log(employees);
       cursor: pointer;
       align-self: center;
     }
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    margin: 15px 0;
+  }
+
+  p {
+    font-family: var(--font-text);
+    font-size: var(--text-p);
+    font-weight: 400;
   }
 </style>

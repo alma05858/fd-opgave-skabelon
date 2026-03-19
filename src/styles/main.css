@@ -4,8 +4,3 @@
 @import url("./global.css") layer(global);
 @import url("./tokens.css") layer(tokens);
 @import url("./overrides.css") layer(overrides);
-
-h2 {
-  font-size: var(--text-h2);
-  font-family: var(--text-h2);
-}

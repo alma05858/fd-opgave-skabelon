@@ -1,13 +1,13 @@
 <header>
   <div class="nav-div">
     <nav class="nav-bar">
-      <a href="/index.html">AskExperts</a>
+      <a href="/index.html">Ask<span class="brand-accent">Experts</span></a>
 
       <ul>
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/case.astro">Case Study</a></li>
-        <li><a href="/team.astro">Team</a></li>
-        <li><a href="/about.astro">About</a></li>
+        <li><a href="/case">Case Study</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
 
       <button popovertarget="pop">Login</button>
@@ -15,11 +15,11 @@
 
     <aside id="pop" popover="manual">
       <div>
-        <h2>Login</h2>
+        <h2>Dashboard Login</h2>
         <form>
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <button type="submit">Login</button>
+          <button type="submit">Go to dashboard</button>
         </form>
         <p>Don't have an account? <a href="#">Register</a></p>
       </div>
@@ -31,9 +31,8 @@
   @layer component {
     nav {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
 
       ul {
         list-style: none;
@@ -44,11 +43,32 @@
 
       a {
         text-decoration: none;
+        color: var(--color-on-ui-primary);
       }
+
+      .brand-accent {
+        color: #f5c842;
+        font-weight: 600;
+      }
+    }
+
+    .pop {
     }
 
     [popovertarget] {
       anchor-name: --nav-btn;
+      border-radius: var(--radius-img);
+      display: flex;
+      padding: 0.25rem 1rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-on-ui-primary);
+      color: var(--color-neutrals-900);
+
+      &:hover {
+        background-color: var(--color-btn-hover);
+      }
     }
 
     [popover] {
@@ -57,6 +77,75 @@
       position-area: bottom span-right;
       position-try: flip-inline;
       justify-self: anchor-center;
+      position-area: bottom span-right;
+      position-try: flip-inline;
+
+      background: var(--color-surface-secondary);
+      border-radius: var(--radius-img);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      width: 320px;
+      padding: 2rem;
+      margin-top: 8px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      h2 {
+        color: #181818;
+        font: var(--font-heading);
+        font-size: var(--text-h2);
+        font-weight: 700;
+        font-size: 1.25rem;
+        align-self: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      input {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid #b1b1b1;
+        border-radius: var(--radius-btn);
+        padding: 12px 16px;
+        color: var(--color-on-ui-primary);
+        width: 100%;
+        &::placeholder {
+          color: var(--color-on-ui-primary-muted);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: var(--color-yellow-500);
+        }
+      }
+
+      button[type="submit"] {
+        background: var(--color-yellow-500);
+        color: var(--color-neutrals-900);
+        border: none;
+        border-radius: var(--radius-btn);
+        padding: 12px 16px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      p {
+        color: var(--color-on-ui-primary-muted);
+        font-size: 0.875rem;
+        text-align: center;
+
+        a {
+          color: var(--color-yellow-500);
+          font-weight: 600;
+        }
+      }
     }
   }
 </style>

@@ -1,0 +1,33 @@
+---
+import "../styles/tokens.css";
+const { title, description, page, variant = "left" } = Astro.props;
+---
+
+<section class={`hero2 hero2--${variant}`}>
+  <p>{page}</p>
+  <h2>{title}</h2>
+  <p>{description}</p>
+</section>
+
+<style>
+  .hero2 {
+    max-width: 70ch;
+    text-align: center;
+    margin: 100px auto;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    margin: 15px;
+    text-align: center;
+  }
+
+  p {
+    font-family: var(--font-text);
+    font-size: var(--text-p);
+    font-weight: 400;
+    text-align: center;
+  }
+</style>

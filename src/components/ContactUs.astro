@@ -2,6 +2,10 @@
 import Phone from "../icons/phone.svg";
 import Clock from "../icons/clock.svg";
 import Pin from "../icons/pin.svg";
+import Langeimg from "../assets/images/maincontactimg.jpg";
+import Right1 from "../assets/images/right1img.jpg";
+import Right2 from "../assets/images/right2img.jpg";
+import { Image } from "astro:assets";
 ---
 
 <section class="contact-section">
@@ -53,15 +57,15 @@ import Pin from "../icons/pin.svg";
     <div class="accent-block"></div>
 
     <div class="img-main">
-      <img src="src/assets/images/maincontactimg.jpg" alt="woman sitting" />
+      <Image src={Langeimg} alt="Woman sitting" />
     </div>
 
     <div class="img-top-right">
-      <img src="src/assets/images/right1img.jpg" alt="coworkers" />
+      <Image src={Right1} alt="coworkers" />
     </div>
 
     <div class="img-bottom-right">
-      <img src="src/assets/images/right2img.jpg" alt="coworkers" />
+      <Image src={Right2} alt="more coworkers" />
     </div>
   </div>
 </section>

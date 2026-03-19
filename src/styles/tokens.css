@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:wght@400;700&display=swap");
 :root {
   /* ==== Colors ==== */
   /* PRIMITIVES */
@@ -31,6 +32,8 @@
   --color-text-weak: var(--color-neutrals-400);
   --color-surface-highlight: var(--color-yellow-600);
   --color-on-ui-primary-muted: var(--color-neutrals-400);
+
+  --color-btn-hover: oklch(from var(--color-on-ui-primary) l c h / 0.45);
 
   /* ==== Spacing ==== */
   --step--1: clamp(0.89rem, 0.86rem + 0.16vw, 1rem);
