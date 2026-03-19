@@ -50,6 +50,7 @@ import ArrowRight from "../icons/arrow--right.svg";
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      margin-top: 150px;
 
       /* wrapper til knapperne */
       .buttons {
@@ -62,6 +63,8 @@ import ArrowRight from "../icons/arrow--right.svg";
 
     h1 {
       color: var(--color-on-ui-primary);
+      font-family: var(--font-heading);
+      font-size: var(--text-h1);
     }
 
     p {
@@ -102,6 +105,25 @@ import ArrowRight from "../icons/arrow--right.svg";
 
     .Arrow {
       height: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: auto; /* ikke fixed 600px */
+    }
+
+    .image-hero {
+      display: none; /* eller vis den under teksten */
+    }
+
+    .hero-text h1 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+
+    .hero-text .buttons {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>
