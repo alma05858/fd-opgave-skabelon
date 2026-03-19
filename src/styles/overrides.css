@@ -127,7 +127,7 @@ footer {
   grid-template-columns: subgrid;
 
   .accordion-content {
-    grid-column: content-start / content-mid;
+    grid-column: content-start / content-end;
   }
 }
 
