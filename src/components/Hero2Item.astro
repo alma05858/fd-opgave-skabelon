@@ -4,15 +4,13 @@ const { title, description, page, variant = "left" } = Astro.props;
 ---
 
 <section class={`hero2 hero2--${variant}`}>
-  <div class="hero2-content">
-    <p>{page}</p>
-    <h2>{title}</h2>
-    <p>{description}</p>
-  </div>
+  <p>{page}</p>
+  <h2>{title}</h2>
+  <p>{description}</p>
 </section>
 
 <style>
-  .hero2-content {
+  .hero2 {
     max-width: 70ch;
     text-align: center;
     margin: 100px 0;
@@ -23,11 +21,13 @@ const { title, description, page, variant = "left" } = Astro.props;
     font-size: var(--text-h2);
     font-weight: 700;
     margin: 15px;
+    text-align: center;
   }
 
   p {
     font-family: var(--font-text);
     font-size: var(--text-p);
     font-weight: 400;
+    text-align: center;
   }
 </style>
