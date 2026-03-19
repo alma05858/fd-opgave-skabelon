@@ -94,6 +94,33 @@ Vi har valgt ikke at tage “hensyn til brugerens systempræference omkring redu
 
 - Fremhæv specifikke kodestumper, der illustrerer brugen af forskellige teknikker og principper fra undervisningen, samt hvorfor de er brugbare.
 
+Det første vi kan tage fat i er vores CSS properties som gjorde det nemt for os at bruge forskellige font-skrifter og størrelser og som gjorde processen nemmere for os:
+--font-heading: Cabin;
+--font-text: Lato;
+
+--text-p: 1rem;
+--text-title: 3.75rem;
+--text-h1: 3.125rem;
+--text-h2: 2.8125rem;
+--text-h3: 2.5rem;
+
+Position relativ og absolute: Dette var relevant at bruge da vi skulle lave vores login element. Her skulle pop up'en hænger sammen med knappen:
+
+position-anchor: --nav-btn;
+position-area: bottom span-left;
+
+Fallback: relevant at bruge hvis nogle browser ikke støtter forskellige properties eller elementer. Det kan være brugbart da brugere tager sig af brug af forskellige browsers.
+@supports not (padding: 1rlh) {
+summary span {
+padding-block: 1rem;
+}
+
+    .answer {
+      padding-bottom: 1rem;
+    }
+
+}
+
 - Fremhæv steder, hvor Defensive CSS er tænkt ind.
   img {
   width: 100%;
@@ -102,9 +129,23 @@ Vi har valgt ikke at tage “hensyn til brugerens systempræference omkring redu
   display: block;
   border-radius: var(--radius-img);
   }
+
   Ved diverse billeder har vi taget højde for "object-fit: cover" der beskærer billedet til at fylde heæe arealet uden at strække det
 
+  summary span svg {
+  flex-shrink: 0;
+  }
+
+flex-shrink forhindrer ikonerne fra at presses fladt langs teksten.
+
+a {
+margin-top: auto;
+}
+
+Det blev brugt til vores servicecard på forsiden og det skubbe links ned i bunden af cardsne.
+
 - Reflekter over, hvor i løsningen, der er brugt progressive enhancement og gennemgå kort, hvordan det er løst.
+  Vi har brugt progressive enhancement ved at sikre at al funktionalitet ligger i HTML, og CSS bruges udelukkende til visuel forbedring — ikke til at gøre tingene funktionelle. Dette kan være den mindre animation vi har lavet ved hjælp af CSS som forbedre oplevelsen for brugeren visuel men som godt kan undlades.
 
 - Forklar, hvordan du har organiseret din CSS; hvornår er det globalt, og hvornår er det komponent-specifikt.
 
