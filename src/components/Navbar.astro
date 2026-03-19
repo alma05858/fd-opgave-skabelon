@@ -85,12 +85,7 @@
 
   [popover] {
     position-anchor: --nav-btn;
-    position-anchor: --nav-btn;
-    position-area: bottom span-right;
-    position-try: flip-inline;
-    justify-self: anchor-center;
-    position-area: bottom span-right;
-    position-try: flip-inline;
+    position-area: bottom span-left;
 
     background: var(--color-surface-secondary);
     border-radius: var(--radius-img);
@@ -156,6 +151,28 @@
         color: var(--color-yellow-500);
         font-weight: 600;
       }
+    }
+  }
+  @media (max-width: 768px) {
+    header {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    nav {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      order: 3; /* falder ned under logo og knap */
+    }
+
+    [popovertarget] {
+      margin-left: auto; /* knap skubbes til højre */
     }
   }
 </style>
