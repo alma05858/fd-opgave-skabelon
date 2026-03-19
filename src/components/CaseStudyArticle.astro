@@ -5,63 +5,65 @@ import caseStudy from "@data/caseStudy.json";
 const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
-<article>
-  <header>
-    <DynamicImage src={image} alt={caseName} />
-    <div class="case-details">
-      <dl>
-        <div>
-          <dt>Case Name</dt>
-          <dd>{caseName}</dd>
-        </div>
-        <div>
-          <dt>Category</dt>
-          <dd class="category">{category}</dd>
-        </div>
-        <div>
-          <dt>Date</dt>
-          <dd class="date">{date}</dd>
-        </div>
-      </dl>
-      <a href="#0" class="button">{buttonLabel}</a>
-    </div>
-  </header>
-  {
-    caseStudy.sections.map((section) => (
-      <section class="flow">
-        {caseStudy.sections[0] === section ? (
-          <h2>{section.title}</h2>
-        ) : (
-          <h3>{section.title}</h3>
-        )}
+<section class="Case-study">
+  <article>
+    <header>
+      <DynamicImage src={image} alt={caseName} />
+      <div class="case-details">
+        <dl>
+          <div>
+            <dt>Case Name</dt>
+            <dd>{caseName}</dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd class="category">{category}</dd>
+          </div>
+          <div>
+            <dt>Date</dt>
+            <dd class="date">{date}</dd>
+          </div>
+        </dl>
+        <a href="#0" class="button">{buttonLabel}</a>
+      </div>
+    </header>
+    {
+      caseStudy.sections.map((section) => (
+        <section class="flow">
+          {caseStudy.sections[0] === section ? (
+            <h2>{section.title}</h2>
+          ) : (
+            <h3>{section.title}</h3>
+          )}
 
-        {Array.isArray(section.content) ? (
-          <>
-            {section.content.map((item) => (
-              <p>{item}</p>
-            ))}
-          </>
-        ) : (
-          <p>{section.content}</p>
-        )}
-        {section.highlights && (
-          <ul>
-            {section.highlights.map((highlight) => (
-              <li>{highlight}</li>
-            ))}
-          </ul>
-        )}
-        {section.image && (
-          <DynamicImage
-            src={section.image}
-            alt={section.title}
-            width={600}
-            height={400}
-          />
-        )}
-      </section>
-    ))
-  }
-</article>
+          {Array.isArray(section.content) ? (
+            <>
+              {section.content.map((item) => (
+                <p>{item}</p>
+              ))}
+            </>
+          ) : (
+            <p>{section.content}</p>
+          )}
+          {section.highlights && (
+            <ul>
+              {section.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+          )}
+          {section.image && (
+            <DynamicImage
+              src={section.image}
+              alt={section.title}
+              width={600}
+              height={400}
+            />
+          )}
+        </section>
+      ))
+    }
+  </article>
+</section>
 
 <style></style>

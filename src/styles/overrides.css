@@ -157,3 +157,13 @@ footer {
     grid-column: content-start / content-mid;
   }
 }
+
+.Case-study {
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+
+  article {
+    grid-column: content-start / content-end;
+  }
+}
